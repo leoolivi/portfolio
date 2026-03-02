@@ -9,7 +9,7 @@ import { Nav }         from './components/Nav'
 import { ProjectCard } from './components/ProjectCard'
 import { SkillCard }   from './components/SkillCard'
 import { Terminal }    from './components/Terminal'
-import { Badge, SectionHeader } from './components/UI'
+import { SectionHeader } from './components/UI'
 
 import {
   useMousePosition,
