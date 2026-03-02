@@ -2,7 +2,7 @@
 
 Personal portfolio website. Dark, industrial aesthetic with smooth interactions and a hidden terminal easter egg.
 
-🔗 **Live →** `<!-- your-url.vercel.app -->`
+🔗 **Live →** [leoolivi.vercel.app](https://lolivieri.vercel.app/)
 
 ![Preview](./preview.png)
 
