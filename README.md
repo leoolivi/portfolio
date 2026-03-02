@@ -1,122 +1,107 @@
 # Leonardo Olivieri — Portfolio
 
-> Dark, minimal-industrial personal portfolio. Built with React + TypeScript + Vite.
+Personal portfolio website. Dark, industrial aesthetic with smooth interactions and a hidden terminal easter egg.
 
-**🔗 Live:** <!-- inserisci qui il link dopo il deploy su Vercel -->
+🔗 **Live →** `<!-- your-url.vercel.app -->`
 
----
-
-## Preview
-
-<!-- Dopo il deploy, sostituisci con uno screenshot reale:
-![Portfolio Preview](./preview.png)
--->
-
-```
-dark / minimal / industrial
-↑↑↓↓←→←→BA  ← try this
-```
+![Preview](./preview.png)
 
 ---
 
-## Stack
+## ✦ Features
 
-| | |
+- Typewriter effect on hero roles
+- Live age counter updated every second
+- Custom cursor with smooth inertia ring
+- Project cards that expand on hover
+- Scroll reveal animations on every section
+- Active section tracking in the navbar
+- Hidden terminal with interactive commands
+- Subtle grain texture overlay
+- Fully responsive
+
+---
+
+## 🛠 Tech Stack
+
+| Layer | Tech |
 |---|---|
 | Framework | React 18 + TypeScript |
 | Bundler | Vite |
 | Icons | Lucide React |
-| Deploy | Vercel |
 | Styling | CSS Custom Properties |
+| Deploy | Vercel |
 
 ---
 
-## Features
-
-- **Typewriter** — cicla tra i ruoli nell'hero con cursore animato
-- **Live age counter** — aggiornato ogni secondo al millisecondo
-- **Custom cursor** — dot + ring con inerzia fluida
-- **Project cards** — hover espande descrizione e stack
-- **Scroll reveal** — ogni sezione entra con animazione
-- **Active nav** — highlight della sezione corrente mentre scrolli
-- **Terminal easter egg** — Konami code `↑↑↓↓←→←→BA` o click su `terminal` nel footer
-- **Grain texture** — overlay sottile su tutto il sito
-- **Responsive** — mobile ready
-
----
-
-## Struttura
+## 📁 Project Structure
 
 ```
 src/
-├── App.tsx                  # layout principale e sezioni
+├── App.tsx                  # main layout & sections
 ├── main.tsx
 ├── styles/
-│   └── global.css           # variabili CSS, reset, animazioni
+│   └── global.css           # CSS variables, reset, keyframes
 ├── types/
-│   └── index.ts             # tipi TypeScript
+│   └── index.ts             # TypeScript interfaces
 ├── data/
-│   └── index.ts             # progetti, skills, costanti
+│   └── index.ts             # projects, skills, constants
 ├── hooks/
-│   └── index.ts             # useMousePosition, useTypewriter, useLiveAge...
+│   └── index.ts             # custom hooks
 └── components/
     ├── Cursor.tsx
     ├── Nav.tsx
     ├── ProjectCard.tsx
     ├── SkillCard.tsx
     ├── Terminal.tsx
-    └── UI.tsx               # Badge, SectionHeader
+    └── UI.tsx
 ```
 
 ---
 
-## Setup locale
+## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/tuo-username/portfolio
+git clone https://github.com/your-username/portfolio
 cd portfolio
 npm install
 npm run dev
 ```
 
-Build:
-
 ```bash
-npm run build
+npm run build   # production build
 ```
 
 ---
 
-## Deploy su Vercel
+## ⚙️ Customization
 
-1. Push il repo su GitHub
-2. Importa su [vercel.com](https://vercel.com) — detecta Vite automaticamente
-3. Deploy in ~30 secondi
-
----
-
-## Personalizzazione
-
-Tutto il contenuto è centralizzato in `src/data/index.ts`:
+All content lives in `src/data/index.ts`:
 
 ```ts
-// Cambia la tua data di nascita
+// your real birth date for the live counter
 export const BIRTH_DATE = 'YYYY-MM-DD'
 
-// Aggiungi / modifica progetti
-export const PROJECTS: Project[] = [ ... ]
+// add or edit projects
+export const PROJECTS: Project[] = [...]
 
-// Modifica lo stack
-export const SKILLS: Skill[] = [ ... ]
+// edit your stack
+export const SKILLS: Skill[] = [...]
 
-// Cambia i ruoli nel typewriter
-export const ROLES: string[] = [ ... ]
+// typewriter roles in the hero
+export const ROLES: string[] = [...]
 ```
 
-Email e social link sono in `src/App.tsx` nella sezione Contact.
+Contact links and email are in the Contact section of `src/App.tsx`.
 
 ---
 
-## Licenza
+## ☁️ Deploy
 
-MIT — fai quello che vuoi, ma un credit è apprezzato.
+Push to GitHub, import on [vercel.com](https://vercel.com) — Vite is auto-detected, no config needed.
+
+---
+
+## 📄 License
+
+No license
