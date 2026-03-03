@@ -21,9 +21,16 @@ export function useMousePosition() {
 
     let raf: number
     const animate = () => {
-      ringRef.current.x += (targetRef.current.x - ringRef.current.x) * 0.12
-      ringRef.current.y += (targetRef.current.y - ringRef.current.y) * 0.12
-      setRing({ x: ringRef.current.x, y: ringRef.current.y })
+      const dx = targetRef.current.x - ringRef.current.x
+      const dy = targetRef.current.y - ringRef.current.y
+      
+      // aggiorna solo se si è mosso abbastanza
+      if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
+        ringRef.current.x += dx * 0.12
+        ringRef.current.y += dy * 0.12
+        setRing({ x: ringRef.current.x, y: ringRef.current.y })
+      }
+      
       raf = requestAnimationFrame(animate)
     }
     raf = requestAnimationFrame(animate)

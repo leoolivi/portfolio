@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, lazy, Suspense } from 'react'
 import {
   Github, Linkedin, Mail, ArrowUpRight,
   Code2, Clock, CheckCircle2, Terminal as TerminalIcon,
@@ -8,8 +8,8 @@ import { Cursor }      from './components/Cursor'
 import { Nav }         from './components/Nav'
 import { ProjectCard } from './components/ProjectCard'
 import { SkillCard }   from './components/SkillCard'
-import { Terminal }    from './components/Terminal'
 import { SectionHeader } from './components/UI'
+import { Helmet } from 'react-helmet-async'
 
 import {
   useMousePosition,
@@ -41,8 +41,26 @@ export default function App() {
   const hoverOn  = () => setHovering(true)
   const hoverOff = () => setHovering(false)
 
+  const Terminal = lazy(() => import('./components/Terminal').then(module => ({ default: module.Terminal })))
+  
   return (
     <>
+      <Helmet>
+        <title>Leonardo Olivieri | Frontend Developer</title>
+        <meta name="description" content="Sviluppatore React & TypeScript. Portfolio con progetti, skills e contatti." />
+        
+        {/* Open Graph / social sharing */}
+        <meta property="og:title" content="Leonardo Olivieri — Portfolio" />
+        <meta property="og:description" content="..." />
+        <meta property="og:image" content="https://lolivieri.vercel.app/og-image.png" />
+        <meta property="og:url" content="https://lolivieri.vercel.app/" />
+        <meta name="twitter:card" content="https://lolivieri.vercel.app/og-image.png" />
+        
+        {/* Altri tag utili */}
+        <meta name="keywords" content="react, backend, developer, portfolio, typescript, spring boot, java, docker, nginx, postgresql, supabase, edge functions" />
+        <link rel="canonical" href="https://lolivieri.vercel.app/" />
+      </Helmet>
+
       {/* ── Cursor ── */}
       <Cursor pos={pos} ring={ring} hovering={hovering} />
 
@@ -65,12 +83,16 @@ export default function App() {
           }}
         >
           <TerminalIcon size={10} color="var(--accent)" />
-          <span>↑↑↓↓←→←→BA</span>
+          <span>while(true) { '// keep scrolling' } </span>
         </div>
       )}
 
       {/* ── Terminal easter egg ── */}
-      {terminalOpen && <Terminal onClose={() => setTerminalOpen(false)} />}
+      {terminalOpen && 
+      <Suspense fallback={<div className="h-96" />}>
+        <Terminal onClose={() => setTerminalOpen(false)} default={module => module.Terminal} />
+      </Suspense>
+      }
 
       {/* ── Nav ── */}
       <Nav activeSection={activeSection} onHover={setHovering} />

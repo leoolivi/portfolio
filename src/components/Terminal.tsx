@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, ComponentType } from 'react'
 
 const COMMANDS: Record<string, string[]> = {
   help:     ['available: whoami, skills, projects, status, mission, age, clear, exit'],
@@ -18,6 +18,7 @@ const COMMANDS: Record<string, string[]> = {
 
 interface TerminalProps {
   onClose: () => void
+  default: ComponentType<any>
 }
 
 export function Terminal({ onClose }: TerminalProps) {
