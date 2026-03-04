@@ -46,8 +46,8 @@ export default function App() {
   return (
     <>
       <Helmet>
-        <title>Leonardo Olivieri | Frontend Developer</title>
-        <meta name="description" content="Sviluppatore React & TypeScript. Portfolio con progetti, skills e contatti." />
+        <title>Leonardo Olivieri | Backend Junior Developer</title>
+        <meta name="description" content="Sviluppatore Java & Spring. Portfolio con progetti, skills e contatti." />
         
         {/* Open Graph / social sharing */}
         <meta property="og:title" content="Leonardo Olivieri — Portfolio" />
